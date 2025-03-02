@@ -5,7 +5,7 @@ def int_to_roman(num):
     :param num: Integer value between 1 and 3999 inclusive.
     :return: A string representing the Roman numeral of the integer.
     """
-    outcomestring=""
+    outcomestring = ""
     # 4 and 9 are special occasions otherwise numbers can be stacked side by side
     while 1000<=num<=3999:
         outcomestring += "M"
@@ -47,7 +47,3 @@ def int_to_roman(num):
         outcomestring += "I"
         num -=1
     return outcomestring
-    
-
-    
-
