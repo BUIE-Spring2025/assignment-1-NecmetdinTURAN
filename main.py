@@ -6,14 +6,6 @@ def int_to_roman(num):
     :return: A string representing the Roman numeral of the integer.
     """
     outcomestring=""
-    if num <= 9:
-        lengthofnum=1
-    elif num<= 99:
-        lengthofnum=2
-    elif num <= 999:
-        lengthofnum=3
-    elif num <= 3999:
-        lengthofnum=4
     # 4 and 9 are special occasions otherwise numbers can be stacked side by side
     while 1000<=num<=3999:
         outcomestring += "M"
@@ -30,6 +22,31 @@ def int_to_roman(num):
     while 100<= num <= 399:
         outcomestring +="C"
         num -= 100
+    if 90<=num<=99:
+        outcomestring +="XC"
+        num -= 90
+    while 50<=num<=89:
+        outcomestring += "L"
+        num -= 50
+    if 40<= num<= 49:
+        outcomestring += "XL"
+        num -= 40
+    while 10<=num<=39:
+        outcomestring +="X"
+        num -=10
+    if num == 9:
+        outcomestring += "IX"
+        num -=9
+    elif 5<=num<=8:
+        outcomestring += "V"
+        num -=5
+    if num ==4:
+        outcomestring +="IV"
+        num -=4
+    while 1<=num<=3:
+        outcomestring += "I"
+        num -=1
+    return outcomestring
     
 
     
